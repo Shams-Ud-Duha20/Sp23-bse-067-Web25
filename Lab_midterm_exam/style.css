@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: Akkurat Mono, "Roboto Mono", monospace;
+    margin-top: 80px; 
+    padding-bottom: 500px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: whitesmoke;
+    background-color: #333;
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    font-family:Akkurat Mono, "Roboto Mono", monospace;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 80px 20px 20px;
+    padding-bottom: 200px; 
+}
+button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+iframe {
+    width: 100%;
+    height: 600px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+
+.footer {
+    background-color: #0f1620;
+    color: white;
+    font-family: Akkurat Mono, "Roboto Mono", monospace;
+    padding: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #333;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 5px;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.newsletter h3 {
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.newsletter p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.sign-up-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.logo-container {
+    margin-top: 0;
+}
+
+.footer-logo {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.footer-logo:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background-color: #0f1620;
+    border-radius: 50%;
+}
+
+.logo-container p {
+    font-size: 12px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #333;
+}
+
+.store-locator, .authenticity, .social-links {
+    flex: 1;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.footer-bottom a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-policies {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.footer-policies a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.task-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 100px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.task-section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.task-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task-section li {
+    margin-bottom: 20px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.task-section button {
+    background-color: #0f1620;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.task-section button:hover {
+    background-color: #1f2b3a;
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    height:900px;
+    border: none;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    border-radius: 8px;
+}

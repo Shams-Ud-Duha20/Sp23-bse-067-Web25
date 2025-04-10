@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C.P.Company</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    
+    <header>
+        <div class="logo">C.P. COMPANY</div>
+        <nav>
+            <ul>
+                <li>MASSIMO OSTI STUDIO</li>
+                <li>IN/EN</li>
+                <li>LOGIN/REGISTER</li>
+                <li>SHOP</li>
+                <li>ICONS</li>
+                <li>BRAND</li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <div class="task-section">
+        <h2>Load Assignments and Lab Tasks</h2>
+        <ul>
+            <li>
+                Assignment 1: CV using HTML & CSS
+                <button onclick="openWindow('assignment_1/index.html')">View</button>
+            </li>
+            <li>
+                Assignment 2: E-Commerce Landing Page
+                <button onclick="openWindow('assignment_2/index.html')">View</button>
+            </li>
+            <li>
+                Lab Task 1: Landing Page using Bootstrap
+                <button onclick="openWindow('lab_task_1/index.html')">View</button>
+            </li>
+            <li>
+                Lab Task 2: Checkout Page with Validation
+                <button onclick="openWindow('lab_task_2/index.html')">View</button>
+            </li>
+        </ul>
+    </div>
+
+    
+    <div id="taskWindow" style="display: none;">
+        <div class="modal-content">
+            <button onclick="closeWindow()" style="position: absolute; top: 10px; right: 10px; font-size: 20px; background: none; border: none; color: white;">&times;</button>
+            <iframe id="taskFrame" src="" width="100%" height="500px" style="border: none;"></iframe>
+        </div>
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column newsletter">
+                <h3>SUBSCRIBE TO THE NEWSLETTER</h3>
+                <p>Join our community and get access to exclusive content, previews and special offers. For you, 10% off your first order.</p>
+                <a href="#" class="sign-up-btn">SIGN UP</a>
+                <div class="footer-logo"></div>
+                <p>C.P. Company © 2025</p>
+            </div>
+
+            <div class="footer-column about">
+                <h3>ABOUT</h3>
+                <ul>
+                    <li><a href="#">OUR STORY</a></li>
+                    <li><a href="#">GARMENT DYEING</a></li>
+                    <li><a href="#">ICONIC GARMENTS</a></li>
+                    <li><a href="#">LENS CERTIFICATION</a></li>
+                    <li><a href="#">CAREERS</a></li>
+                    <li><a href="#">RESPONSIBILITY PROGRAM</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column legal">
+                <h3>LEGAL AREA</h3>
+                <ul>
+                    <li><a href="#">SHIPPING</a></li>
+                    <li><a href="#">CONDITIONS OF SALE</a></li>
+                    <li><a href="#">RETURNS</a></li>
+                    <li><a href="#">PAYMENT</a></li>
+                    <li><a href="#">CONDITIONS OF USE</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column customer">
+                <h3>CUSTOMER CARE</h3>
+                <ul>
+                    <li><a href="#">FIT GUIDE</a></li>
+                    <li><a href="#">TRACK ORDERS</a></li>
+                    <li><a href="#">FIX & REPAIR</a></li>
+                    <li><a href="#">CORPORATE INFORMATION</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div><a href="#">STORE LOCATOR ↗</a></div>
+            <div><a href="#">AUTHENTICITY ↗</a></div>
+            <div class="social-links">
+                <a href="#">FB ↗</a>
+                <a href="#">IG ↗</a>
+                <a href="#">YT ↗</a>
+            </div>
+        </div>
+
+        <div class="footer-policies">
+            <a href="#">PRIVACY POLICY</a>
+            <a href="#">COOKIES</a>
+        </div>
+    </footer>
+
+    
+    <script>
+        
+        function openWindow(path) {
+            var iframe = document.getElementById("taskFrame");
+            var taskWindow = document.getElementById("taskWindow");
+            iframe.src = path;
+            taskWindow.style.display = "block"; 
+        }
+
+        
+        function closeWindow() {
+            var taskWindow = document.getElementById("taskWindow");
+            taskWindow.style.display = "none"; 
+        }
+    </script>
+
+
+</body>
+</html>
