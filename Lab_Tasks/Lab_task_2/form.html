@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C.P. Company  Checkout Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <section class="intro">
+    <div class="bg-image-vertical h-100" style="background-color: #efd3e4; background-image: url(bg.jpg)">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+              <div class="card" style="border-radius: 1rem">
+                <div class="card-body p-5">
+                  <h1 class="mb-5 text-center">Checkout Form</h1>
+                  <form id="checkout-form">
+                    <!-- Full Name -->
+                    <div class="form-outline">
+                      <input type="text" id="name-input" class="form-control" required pattern="[A-Za-z\s]+" />
+                      <label class="form-label" for="name-input">Full name</label>
+                      <div class="invalid-feedback" id="name-error"></div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="form-outline mb-4">
+                      <input type="text" id="address-input" class="form-control" required />
+                      <label class="form-label" for="address-input">Address</label>
+                      <div class="invalid-feedback" id="address-error"></div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-outline mb-4">
+                      <input type="email" id="email-input" class="form-control" required />
+                      <label class="form-label" for="email-input">Email</label>
+                      <div class="invalid-feedback" id="email-error"></div>
+                    </div>
+
+                    <!-- City -->
+                    <div class="form-outline mb-4">
+                      <input type="text" id="city-input" class="form-control" required />
+                      <label class="form-label" for="city-input">City</label>
+                      <div class="invalid-feedback" id="city-error"></div>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-outline mb-4">
+                      <input type="tel" id="phone-input" class="form-control" required pattern="\d{10}" />
+                      <label class="form-label" for="phone-input">Phone Number</label>
+                      <div class="invalid-feedback" id="phone-error"></div>
+                    </div>
+
+                    <!-- Credit Card -->
+                    <div class="form-outline mb-4">
+                      <input type="text" id="cc-input" class="form-control" required pattern="\d{16}" />
+                      <label class="form-label" for="cc-input">Credit Card Number</label>
+                      <div class="invalid-feedback" id="cc-error"></div>
+                    </div>
+
+                    <!-- Expiry Date -->
+                    <div class="form-outline mb-4">
+                      <input type="month" id="expiry-input" class="form-control" required />
+                      <label class="form-label" for="expiry-input">Expiry Date</label>
+                      <div class="invalid-feedback" id="expiry-error"></div>
+                    </div>
+
+                    <!-- CVV -->
+                    <div class="form-outline mb-4">
+                      <input type="text" id="cvv-input" class="form-control" required pattern="\d{3}" />
+                      <label class="form-label" for="cvv-input">CVV</label>
+                      <div class="invalid-feedback" id="cvv-error"></div>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary btn-rounded btn-block">
+                      Place Order
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+
+</html>
