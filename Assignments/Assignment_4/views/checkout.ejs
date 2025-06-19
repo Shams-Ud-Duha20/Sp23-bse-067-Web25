@@ -1,0 +1,202 @@
+<section class="intro bg-light py-5">
+    <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <div class="card shadow-lg" style="border-radius: 1rem">
+                        <div class="card-body p-4 p-md-5">
+                            <h1 class="mb-5 text-center">Checkout</h1>
+
+                            
+                            <div class="mb-5">
+                                <h4 class="mb-3">Order Summary</h4>
+                                <ul class="list-group mb-3">
+                                    <% cart.forEach(item => { %>
+                                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                                            <div>
+                                                <h6 class="my-0"><%= item.name %></h6>
+                                                <small class="text-muted">Quantity: <%= item.quantity %></small>
+                                            </div>
+                                            <span class="text-muted">$<%= (item.price * item.quantity).toFixed(2) %></span>
+                                        </li>
+                                    <% }); %>
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Total (USD)</span>
+                                        <strong>$<%= totalCost %></strong>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            
+                            <h4 class="mb-4">Shipping Details</h4>
+                            <form id="checkout-form">
+                                
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="name-input">Full Name</label>
+                                    <input type="text" id="name-input" class="form-control" required pattern="[A-Za-z\s]+" value="<%= typeof username != 'undefined' ? username : '' %>"/>
+                                    <div class="invalid-feedback" id="name-error"></div>
+                                </div>
+
+                                
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="email-input">Email</label>
+                                    <input type="email" id="email-input" class="form-control" required value="<%= typeof email != 'undefined' ? email : '' %>"/>
+                                    <div class="invalid-feedback" id="email-error"></div>
+                                </div>
+
+                                <!-- Phone Number -->
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="phone-input">Phone Number</label>
+                                    <input type="tel" id="phone-input" class="form-control" required pattern="\d{10,15}" />
+                                    <div class="invalid-feedback" id="phone-error"></div>
+                                </div>
+
+                                <!-- Address -->
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="address-input">Address</label>
+                                    <input type="text" id="address-input" class="form-control" required />
+                                    <div class="invalid-feedback" id="address-error"></div>
+                                </div>
+
+                                <!-- City -->
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="city-input">City</label>
+                                    <input type="text" id="city-input" class="form-control" required />
+                                    <div class="invalid-feedback" id="city-error"></div>
+                                </div>
+
+                                
+                                
+                                
+                                
+                                <button type="submit" id="pay-later-btn" class="btn btn-dark btn-rounded btn-block mt-4">
+                                    Pay Later with Cash
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#checkout-form").on("submit", function (event) {
+            event.preventDefault();
+
+            let isValidForm = true;
+
+            if (!validateName()) { isValidForm = false; }
+            if (!validateAddress()) { isValidForm = false; }
+            if (!validateEmail()) { isValidForm = false; }
+            if (!validatePhone()) { isValidForm = false; }
+            if (!validateCity()) { isValidForm = false; } 
+
+            if (isValidForm) {
+                
+                var serverForm = $('<form>', {
+                    'action': '/my-orders/place-cash-order',
+                    'method': 'POST',
+                    'style': 'display:none;'
+                });
+                serverForm.append($('<input>', { 'name': 'dummy', 'value': 'true' }));
+                $('body').append(serverForm);
+                serverForm.submit();
+
+            } else {
+                
+            }
+        });
+    });
+
+    function validateName() {
+        let name = $("#name-input").val().trim();
+        if (name === "") {
+            $("#name-error").text("Full name is required.").show();
+            $("#name-input").addClass('is-invalid');
+            return false;
+        }
+        if (!/^[A-Za-z\s]+$/.test(name)) {
+            $("#name-error").text("Full name can only contain alphabets and spaces.").show();
+            $("#name-input").addClass('is-invalid');
+            return false;
+        }
+        $("#name-error").hide();
+        $("#name-input").removeClass('is-invalid');
+        return true;
+    }
+
+    function validateAddress() {
+        let address = $("#address-input").val().trim();
+        if (address === "") {
+            $("#address-error").text("Address is required.").show();
+            $("#address-input").addClass('is-invalid');
+            return false;
+        }
+        $("#address-error").hide();
+        $("#address-input").removeClass('is-invalid');
+        return true;
+    }
+
+    function validateEmail() {
+        let email = $("#email-input").val().trim();
+        if (email === "") {
+            $("#email-error").text("Email is required.").show();
+            $("#email-input").addClass('is-invalid');
+            return false;
+        }
+        if (!/^\S+@\S+\.\S+$/.test(email)) {
+            $("#email-error").text("Please enter a valid email address.").show();
+            $("#email-input").addClass('is-invalid');
+            return false;
+        }
+        $("#email-error").hide();
+        $("#email-input").removeClass('is-invalid');
+        return true;
+    }
+    
+    function validateCity() {
+        let city = $("#city-input").val().trim();
+        if (city === "") {
+            $("#city-error").text("City is required.").show();
+            $("#city-input").addClass('is-invalid');
+            return false;
+        }
+        $("#city-error").hide();
+        $("#city-input").removeClass('is-invalid');
+        return true;
+    }
+
+    function validatePhone() {
+        let phone = $("#phone-input").val().trim();
+        if (phone === "") {
+            $("#phone-error").text("Phone number is required.").show();
+            $("#phone-input").addClass('is-invalid');
+            return false;
+        }
+        
+        if (!/^\d{10,15}$/.test(phone)) {
+            $("#phone-error").text("Phone number must contain 10 to 15 digits.").show();
+            $("#phone-input").addClass('is-invalid');
+            return false;
+        }
+        $("#phone-error").hide();
+        $("#phone-input").removeClass('is-invalid');
+        return true;
+    }
+
+    function validateCard() {
+        return true;
+    }
+
+    function validateExpiry() {
+        return true;
+    }
+
+    function validateCVV() {
+        return true;
+    }
+</script>

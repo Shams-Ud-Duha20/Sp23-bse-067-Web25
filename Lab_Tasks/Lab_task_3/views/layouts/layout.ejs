@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C.P. Company - <%= title %></title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" xintegrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <header class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center p-3 position-absolute top-0 w-100" style="z-index: 10;">
+            <div class="logo">C.P. COMPANY</div>
+            <nav>
+                <ul class="d-flex gap-3 list-unstyled m-0">
+                    <li><a href="/" class="text-white text-decoration-none">HOME</a></li>
+                    <li><a href="/products" class="text-white text-decoration-none">PRODUCTS</a></li>
+                    <li><a href="/about" class="text-white text-decoration-none">About-Us</a></li>
+                    
+                    
+                    <% if (isAuthenticated) { %>
+                        <li><a href="/my-orders" class="text-white text-decoration-none">MY ORDERS</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">WELCOME, <%= user.username.toUpperCase() %></a></li>
+                        <li><a href="/auth/logout" class="text-white text-decoration-none">LOGOUT</a></li>
+                    <% } else { %>
+                        <li><a href="/auth/login" class="text-white text-decoration-none">LOGIN</a></li>
+                        <li><a href="/auth/register" class="text-white text-decoration-none">REGISTER</a></li>
+                    <% } %>
+                    <li><a href="#" class="text-white text-decoration-none"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <%- body %>
+    </main>
+
+    <footer class="footer mt-5">
+        <div class="container footer-container row">
+            <div class="col-md-3 footer-column newsletter">
+                <h3>SUBSCRIBE TO THE NEWSLETTER</h3>
+                <p>Join our community and get access to exclusive content, previews and special offers. For you, 10% off your first order.</p>
+                <a href="#" class="sign-up-btn">SIGN UP</a>
+                <div class="logo-container">
+                    <div class="footer-logo"></div>
+                    <p>C.P. Company © 2025</p>
+                </div>
+            </div>
+            <div class="col-md-3 footer-column about">
+                <h3>ABOUT</h3>
+                <ul>
+                    <li><a href="#">OUR STORY</a></li>
+                    <li><a href="#">GARMENT DYEING</a></li>
+                    <li><a href="#">ICONIC GARMENTS</a></li>
+                    <li><a href="#">LENS CERTIFICATION</a></li>
+                    <li><a href="#">CAREERS</a></li>
+                    <li><a href="#">RESPONSIBILITY PROGRAM</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-column legal">
+                <h3>LEGAL AREA</h3>
+                <ul>
+                    <li><a href="#">SHIPPING</a></li>
+                    <li><a href="#">CONDITIONS OF SALE</a></li>
+                    <li><a href="#">RETURNS</a></li>
+                    <li><a href="#">PAYMENT</a></li>
+                    <li><a href="#">CONDITIONS OF USE</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-column customer">
+                <h3>CUSTOMER CARE</h3>
+                <ul>
+                    <li><a href="#">FIT GUIDE</a></li>
+                    <li><a href="#">TRACK ORDERS</a></li>
+                    <li><a href="#">FIX & REPAIR</a></li>
+                    <li><a href="#">CORPORATE INFORMATION</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom d-flex justify-content-between mt-3 pb-3 border-top">
+            <div class="store-locator"><a href="#">STORE LOCATOR ↗</a></div>
+            <div class="authenticity"><a href="#">AUTHENTICITY ↗</a></div>
+            <div class="social-links d-flex gap-3">
+                <a href="#">FB ↗</a>
+                <a href="#">IG ↗</a>
+                <a href="#">YT ↗</a>
+            </div>
+        </div>
+
+        <div class="container footer-policies d-flex justify-content-end gap-3 pb-3">
+            <a href="#">PRIVACY POLICY</a>
+            <a href="#">COOKIES</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="/js/script.js"></script>
+</body>
+</html>

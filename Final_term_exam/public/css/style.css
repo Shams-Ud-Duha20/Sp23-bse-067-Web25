@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Akkurat Mono, "Roboto Mono", monospace;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: transparent; 
+    position: absolute; 
+    width: 100%; 
+    z-index: 10; 
+    top: 0; 
+}
+
+
+header .logo, header nav ul li {
+    color: white; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    font-family:Akkurat Mono, "Roboto Mono", monospace;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    left: 20px;
+    font-family:Akkurat Mono, "Roboto Mono", monospace;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.text-overlay h1 {
+    font-size: 50px;
+    font-family:Akkurat Mono, "Roboto Mono", monospace;
+}
+
+.text-overlay p {
+    font-size: 30px;
+    font-family:Akkurat Mono, "Roboto Mono", monospace;
+}
+
+.button1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: whitesmoke;
+    color: black;
+    text-decoration: none;
+    margin-top: 20px;
+    
+}
+.trending {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+}
+.trending h2 {
+    margin: 0 0 20px 0;
+    padding: 10px;
+    border: 1px solid #000;
+    display: inline-block;
+    font-family:Akkurat Mono, "Roboto Mono", monospace;
+}
+.image-container {
+    display: flex;
+    justify-content: space-between;
+}
+.image-item {
+    text-align: center;
+    flex: 1;
+    margin: 0;
+    font-family:Akkurat Mono, "Roboto Mono", monospace;
+}
+.image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.image-item p {
+    margin: 0px;
+}
+.horizontal-line {
+    margin-top: 20px;
+    height: 2px;
+    background-color: #000;
+    width: 100%;
+}
+
+.alternative-blocks {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0; /* No space between blocks */
+    background-color: #000; /* Fill background */
+    
+    color: white; /* Ensure text is visible */
+}
+
+.text-section, .image-section {
+    flex: 1; /* Equal space for text and image sections */
+}
+
+.image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-section img {
+    max-width: 100%; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Add styles as needed */
+}
+
+.text-section h2 {
+    margin-bottom: 10px;
+    font-size: 28px; /* Adjust font size as needed */
+}
+
+.text-section p {
+    margin-bottom: 20px;
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: black; /* Adjust button background color */
+    color: whitesmoke; /* Adjust button text color */
+    text-decoration: none;
+    border: 1px solid whitesmoke;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.about-section {
+    padding: 10px;
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.about-section h2 {
+    font-size: 50px; /* Adjust heading size */
+    font-weight: bolder;
+    
+    margin-top: 20px;
+    text-align: center;
+}
+
+.about-section p {
+    font-size: 16px; /* Adjust paragraph size */
+    margin: 50px 50px 50px 50px ;
+    
+}
+
+.image-container1 {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.image-item1 {
+    flex: 1; 
+    margin: 0;
+    text-align: center; /* Center-align text */
+}
+
+
+.image-item1 img {
+    /* Maintain aspect ratio */
+    border-radius: 5px; 
+    display: block;
+    width: 100%;
+    height: auto;
+    
+    
+}
+
+
+
+
+/* Footer Styles */
+.footer {
+    background-color: #0f1620;
+    color: white;
+    font-family: Akkurat Mono, "Roboto Mono", monospace;
+    padding: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #333;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 5px;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.newsletter h3{
+    font-weight: bolder;
+    font-size: x-large;
+
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.newsletter p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.sign-up-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.logo-container {
+    margin-top: 0;
+}
+
+.footer-logo {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.footer-logo:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background-color: #0f1620;
+    border-radius: 50%;
+}
+
+.logo-container p {
+    font-size: 12px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #333;
+}
+
+.store-locator, .authenticity, .social-links {
+    flex: 1;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.footer-bottom a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-policies {
+    display: flex;
+    justify-content: flex-end;
+    
+    padding: 20px;
+}
+
+.footer-policies a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}

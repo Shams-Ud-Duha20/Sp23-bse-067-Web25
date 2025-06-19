@@ -1,0 +1,90 @@
+<div class="hero position-relative text-center">
+    <img src="images/img1.jpg" alt="Model wearing clothing" class="img-fluid w-100">
+    <div class="text-overlay position-absolute text-start">
+        <h1>METROPOLIS SERIES SS025</h1>
+        <p>Urban performance and functionality</p>
+        <a href="#" class="button1">DISCOVER MORE</a>
+    </div>
+</div>
+
+<div class="container-fluid trending mt-5">
+    <h2 class="border p-2 d-inline-block">TRENDING NOW</h2>
+    <div id="trendingCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
+        <div class="carousel-inner">
+            <% products.forEach((product, index) => { %>
+                <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                    <div class="row text-center">
+                        <% product.items.forEach(item => { %>
+                            <div class="col-md-3 col-6 mb-3">
+                                <img src="<%= item.image %>" class="rounded w-100" alt="<%= item.name %>">
+                                <p><%= item.series %></p>
+                                <p><%= item.name %></p>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#trendingCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+    <div class="horizontal-line mt-4"></div>
+</div>
+
+
+<!-- Alternative Blocks (Responsive with Bootstrap Grid) -->
+<div class="container-fluid alternative-blocks">
+    <div class="row block align-items-center">
+        <div class="col-md-6 text-section p-4">
+            <h2>BOLOGNA FC INSPIRED COLLECTION</h2>
+            <p>Discover the exclusive range with custom red lenses</p>
+            <a href="#" class="button">DISCOVER MORE</a>
+        </div>
+        <div class="col-md-6 image-section">
+            <img src="images/blockimg1.jpg" class="img-fluid" alt="Bologna FC Inspired Collection">
+        </div>
+    </div>
+    <div class="row block align-items-center flex-md-row-reverse">
+        <div class="col-md-6 text-section p-4">
+            <h2>PALACE C.P. COMPANY</h2>
+            <p>From South Bank to Italy: the journey between British skate culture and Italian sportswear legacy continues</p>
+            <a href="#" class="button">DISCOVER MORE</a>
+        </div>
+        <div class="col-md-6 image-section">
+            <img src="images/blockimg2.jpg" class="img-fluid" alt="PALACE C.P. COMPANY">
+        </div>
+    </div>
+    <div class="row block align-items-center">
+        <div class="col-md-6 text-section p-4">
+            <h2>Manchester City x C.P. Company</h2>
+            <p>Back in the place where we belong</p>
+            <a href="#" class="button">DISCOVER MORE</a>
+        </div>
+        <div class="col-md-6 image-section">
+            <img src="images/blockimg3.jpg" class="img-fluid" alt="Manchester City x C.P. Company">
+        </div>
+    </div>
+</div>
+
+<!-- About Section -->
+<div class="container-fluid about-section">
+    <h2>ABOUT C.P. COMPANY</h2>
+    <p>
+        In 1971 Massimo Osti, the revolutionary designer internationally recognized as the “godfather of sportswear”, founded Chester Perry brand, renamed into C.P. Company in 1978. The brand immediately found favour thanks to its subtly non-conformist interpretation of functional men’s wardrobe classics...
+    </p>
+    <div class="row image-container1">
+        <div class="col-md-6 image-item1">
+            <img src="images/blocco_jackets.jpg" class="img-fluid rounded" alt="Jacket and Coats">
+            <p>JACKET AND COATS</p>
+        </div>
+        <div class="col-md-6 image-item1">
+            <img src="images/KNITWEAR.png" class="img-fluid rounded" alt="Knitwear">
+            <p>KNITWEAR</p>
+        </div>
+    </div>
+</div>

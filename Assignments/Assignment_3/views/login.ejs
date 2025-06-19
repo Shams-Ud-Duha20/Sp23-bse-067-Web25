@@ -1,0 +1,37 @@
+<section class="vh-100 d-flex align-items-center justify-content-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm rounded-lg" style="border-radius: 1rem;">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="text-center mb-4">Login</h2>
+                        
+                        <% if (typeof message !== 'undefined' && message) { %>
+                            <div class="alert alert-danger" role="alert">
+                                <%= message %>
+                            </div>
+                        <% } %>
+                        <% if (typeof success_msg !== 'undefined' && success_msg) { %>
+                            <div class="alert alert-success" role="alert">
+                                <%= success_msg %>
+                            </div>
+                        <% } %>
+
+                        <form action="/auth/login" method="POST">
+                            <div class="form-group mb-3">
+                                <label for="username" class="form-label">Username:</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100 btn-rounded">Login</button>
+                        </form>
+                        <p class="mt-4 text-center">Don't have an account? <a href="/auth/register" class="text-decoration-none">Register here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
